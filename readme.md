@@ -22,4 +22,23 @@ That will populate 16 stores with 3 authors and 41 reviews. The logins for the a
 |Debbie Downer|debbie@example.com|debbie|
 |Beau|beau@example.com|beau|
 
+## Run on Aws
+
+to run the application you need to download the .pem file if you are a labber you can found it in lvl drive on:
+
+tech program 2.0/2019/suppliers/awskey/supplierTempKey.pem
+
+once you download it open command line and execute this command to connect to aws ec2 machine:
+
+```bash
+ssh ec2-user@34.230.67.89 -i <.pem file path> 
+```
+
+once you are connected to aws machine to start supplier service execute:
+
+```bash
+cd LVLProviders
+node start.js
+```
+
 
