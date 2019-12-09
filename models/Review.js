@@ -20,7 +20,17 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: 'Your review must have text!'
   },
-  rating: {
+  rating_star: {
+    type: Number,
+    min: 1,
+    max: 5
+  },
+  rating_dollar: {
+    type: Number,
+    min: 1,
+    max: 5
+  },
+  rating_heart: {
     type: Number,
     min: 1,
     max: 5

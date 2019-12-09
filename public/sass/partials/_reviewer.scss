@@ -5,6 +5,37 @@
   position: relative;
   box-shadow: 0 0px 10px rgba(0,0,0,0.2);
   margin-bottom: 2rem;
+  &__dollars {
+    display: flex;
+    justify-content: center;
+    input {
+      display: none;
+      &:checked {
+        & ~ label {
+          color: $yellow;
+        }
+      }
+      & + label {
+        font-size: 0;
+        &:before {
+          content: '💲';
+          font-size: 2rem;
+        }
+        /* These are in the opposite DOM order
+           re-order them to be visually in normal order
+           This is fine for accessibility because our labels have for()
+         */
+        &[for="dollar5"] { order: 5; }
+        &[for="dollar4"] { order: 4; }
+        &[for="dollar3"] { order: 3; }
+        &[for="dollar2"] { order: 2; }
+        &[for="dollar1"] { order: 1; }
+        &:hover, &:hover ~ label {
+          color: lighten($yellow,20%);
+        }
+      }
+    }
+  }
   &__stars {
     display: flex;
     justify-content: center;
