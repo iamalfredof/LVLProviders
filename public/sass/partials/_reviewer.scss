@@ -18,7 +18,7 @@
       & + label {
         font-size: 0;
         &:before {
-          content: '💲';
+          content: '$';
           font-size: 2rem;
         }
         /* These are in the opposite DOM order
@@ -30,6 +30,37 @@
         &[for="dollar3"] { order: 3; }
         &[for="dollar2"] { order: 2; }
         &[for="dollar1"] { order: 1; }
+        &:hover, &:hover ~ label {
+          color: lighten($yellow,20%);
+        }
+      }
+    }
+  }
+  &__hearts {
+    display: flex;
+    justify-content: center;
+    input {
+      display: none;
+      &:checked {
+        & ~ label {
+          color: $yellow;
+        }
+      }
+      & + label {
+        font-size: 0;
+        &:before {
+          content: '♥';
+          font-size: 2rem;
+        }
+        /* These are in the opposite DOM order
+           re-order them to be visually in normal order
+           This is fine for accessibility because our labels have for()
+         */
+        &[for="heart5"] { order: 5; }
+        &[for="heart4"] { order: 4; }
+        &[for="heart3"] { order: 3; }
+        &[for="heart2"] { order: 2; }
+        &[for="heart1"] { order: 1; }
         &:hover, &:hover ~ label {
           color: lighten($yellow,20%);
         }
