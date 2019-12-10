@@ -434,6 +434,12 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'panama';
+  src: url("/fonts/panama-bold-webfont.woff2") format("woff2"), url("/fonts/panama-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   font-size: 10px; }
 
@@ -530,16 +536,10 @@ label {
     z-index: 5; }
   .search__input {
     font-size: 30px;
-    background: whitesmoke;
-    color: black;
-    
-    border: 1px solid;
-    border-radius: 3px;
-    display: inline-block;
-    margin: 10px;
-    padding: 5px;
-  
-  }
+    background: none;
+    color: #d11daa;
+    outline: 0;
+    border: 0; }
   .search__result {
     padding: 10px;
     display: block;
@@ -989,6 +989,8 @@ label {
     color: #999999; }
   .review__stars {
     color: #FFC40E; }
+  .review__dollars {
+    color: #FFC40E; }
   .review__body {
     padding: 2rem; }
   .review p {
@@ -1001,6 +1003,76 @@ label {
   position: relative;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 2rem; }
+  .reviewer__dollars {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .reviewer__dollars input {
+      display: none; }
+      .reviewer__dollars input:checked ~ label {
+        color: #FFC40E; }
+      .reviewer__dollars input + label {
+        font-size: 0;
+        /* These are in the opposite DOM order
+           re-order them to be visually in normal order
+           This is fine for accessibility because our labels have for()
+         */ }
+        .reviewer__dollars input + label:before {
+          content: '$';
+          font-size: 2rem; }
+        .reviewer__dollars input + label[for="dollar5"] {
+          -ms-flex-order: 5;
+              order: 5; }
+        .reviewer__dollars input + label[for="dollar4"] {
+          -ms-flex-order: 4;
+              order: 4; }
+        .reviewer__dollars input + label[for="dollar3"] {
+          -ms-flex-order: 3;
+              order: 3; }
+        .reviewer__dollars input + label[for="dollar2"] {
+          -ms-flex-order: 2;
+              order: 2; }
+        .reviewer__dollars input + label[for="dollar1"] {
+          -ms-flex-order: 1;
+              order: 1; }
+        .reviewer__dollars input + label:hover, .reviewer__dollars input + label:hover ~ label {
+          color: #ffdd74; }
+  .reviewer__hearts {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .reviewer__hearts input {
+      display: none; }
+      .reviewer__hearts input:checked ~ label {
+        color: #FFC40E; }
+      .reviewer__hearts input + label {
+        font-size: 0;
+        /* These are in the opposite DOM order
+           re-order them to be visually in normal order
+           This is fine for accessibility because our labels have for()
+         */ }
+        .reviewer__hearts input + label:before {
+          content: '\2665';
+          font-size: 2rem; }
+        .reviewer__hearts input + label[for="heart5"] {
+          -ms-flex-order: 5;
+              order: 5; }
+        .reviewer__hearts input + label[for="heart4"] {
+          -ms-flex-order: 4;
+              order: 4; }
+        .reviewer__hearts input + label[for="heart3"] {
+          -ms-flex-order: 3;
+              order: 3; }
+        .reviewer__hearts input + label[for="heart2"] {
+          -ms-flex-order: 2;
+              order: 2; }
+        .reviewer__hearts input + label[for="heart1"] {
+          -ms-flex-order: 1;
+              order: 1; }
+        .reviewer__hearts input + label:hover, .reviewer__hearts input + label:hover ~ label {
+          color: #ffdd74; }
   .reviewer__stars {
     display: -ms-flexbox;
     display: flex;
@@ -1047,7 +1119,8 @@ label {
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     border-top: 1px solid #e6e6e6; }
     .reviewer__meta > * {
       -ms-flex: 1;

@@ -3,9 +3,15 @@ mixin review(review)
     .review__author
       img.avatar(src=review.author.gravatar)
       p= review.author.name
-    .review__stars(title=`Rated ${review.rating} our of 5 stars`)
-      = `★`.repeat(review.rating)
-      = `☆`.repeat(5 - review.rating)
+    .review__stars(title=`Rated ${review.rating_star} our of 5 stars`)
+      = `★`.repeat(review.rating_star)
+      = `☆`.repeat(5 - review.rating_star)
+    .review__dollars(title=`Rated ${review.rating_dollar} our of 5 stars`)
+      = `💲`.repeat(review.rating_dollar)
+      = ` `.repeat(5 - review.rating_dollar)
+    .review__hearts(title=`Rated ${review.rating_dollar} our of 5 stars`)
+      = `❤️`.repeat(review.rating_heart)
+      = ` `.repeat(5 - review.rating_heart)
     time.review__time(datetime=review.created)= h.moment(review.created).fromNow()
   .review__body
     p= review.text

@@ -4,7 +4,15 @@ mixin reviewForm(store)
     .reviewer__meta
       .reviewer__stars
         each num in [5,4,3,2,1]
-          input(type="radio" required id=`star${num}` name="rating" value=num)
+          input(type="radio" required id=`star${num}` name="rating_star" value=num)
           label(for=`star${num}`) #{num} Stars
+      .reviewer__dollars
+        each num1 in [5,4,3,2,1]
+          input(type="radio" required id=`dollar${num1}` name="rating_dollar" value=num1)
+          label(for=`dollar${num1}`) #{num1} Dollars
+      .reviewer__hearts
+        each num1 in [5,4,3,2,1]
+          input(type="radio" required id=`heart${num1}` name="rating_heart" value=num1)
+          label(for=`heart${num1}`) #{num1} Hearts
       input.button(type="submit" value="Submit Review →")
 
