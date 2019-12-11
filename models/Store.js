@@ -8,6 +8,16 @@ const storeSchema = new mongoose.Schema({
     trim: true,
     required: 'Please enter a store name!'
   },
+  email: {
+    type: String,
+    trim: true,
+    required: 'Please enter a email name!'
+  },
+  phone: {
+    type: String,
+    trim: true,
+    required: 'Please enter a Phone number!'
+  },
   slug: String,
   description: {
     type: String,
