@@ -23,6 +23,11 @@ const storeSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  observaciones: String,
+  description: {
+    type: String,
+    trim: true
+  },
   tags: [String],
   created: {
     type: Date,
