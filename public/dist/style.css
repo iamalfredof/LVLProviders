@@ -536,9 +536,9 @@ label {
     z-index: 5; }
   .search__input {
     font-size: 30px;
-    background: none;
+    background: white;
     color: #d11daa;
-    outline: 0;
+    outline: black;
     border: 0; }
   .search__result {
     padding: 10px;
