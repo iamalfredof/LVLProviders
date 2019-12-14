@@ -7,13 +7,16 @@ block content
   .single
     .single__hero
       img.single__image(src=`/uploads/${store.photo || 'store.png'}`)
-      h2.title.title--single
+      h1.title.title--single
         a(href=`/store/${store.slug}`) #{store.name}
 
   .single__details.inner
     img.single__map(src=h.staticMap(store.location.coordinates))
     p.single__location= store.location.address
     p= store.description
+    block content
+      label Observaciones: 
+      p= store.observaciones
 
     if store.tags
       ul.tags
