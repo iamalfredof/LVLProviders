@@ -7,7 +7,8 @@ const reviewController = require('../controllers/reviewController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 
-router.get('/', authController.isLoggedIn, catchErrors(storeController.getStores));
+// router.get('/', authController.isLoggedIn, catchErrors(storeController.getStores));
+router.get('/', authController.isLoggedIn, catchErrors(storeController.getStoresByTag));
 router.get('/stores', authController.isLoggedIn, catchErrors(storeController.getStores));
 router.get('/stores/page/:page', authController.isLoggedIn, catchErrors(storeController.getStores));
 router.get('/add', authController.isLoggedIn, storeController.addStore); 

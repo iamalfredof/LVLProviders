@@ -21,9 +21,9 @@ exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 exports.siteName = `La Victoria Lab`;
 
 exports.menu = [
-  { slug: '/stores', title: 'Proveedores', icon: 'store', },
-//  { slug: '/tags', title: 'Tags', icon: 'tag', },
+//  { slug: '/stores', title: 'Proveedores', icon: 'store', },
+  { slug: '/tags', title: 'Proveedores', icon: 'tag', },
   { slug: '/top', title: 'Mas usados', icon: 'top', },
-  { slug: '/add', title: 'Add', icon: 'add', },
-  { slug: '/map', title: 'Map', icon: 'map', },
+  { slug: '/add', title: 'Agregar', icon: 'add', },
+//  { slug: '/map', title: 'Map', icon: 'map', },
 ];
