@@ -16,7 +16,7 @@ const storeSchema = new mongoose.Schema({
   phone: {
     type: String,
     trim: true,
-    required: 'Please enter a Phone number!'
+    //required: 'Please enter a Phone number!'
   },
   slug: String,
   description: {
