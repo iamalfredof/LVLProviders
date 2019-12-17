@@ -11,8 +11,8 @@ const Review = require('../models/Review');
 const User = require('../models/User');
 
 
-const stores = JSON.parse(fs.readFileSync(__dirname + '/stores.json', 'utf-8'));
-const reviews = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8'));
+const stores = JSON.parse(fs.readFileSync(__dirname + '/lvlstores.json', 'utf-8'));
+//const reviews = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8'));
 const users = JSON.parse(fs.readFileSync(__dirname + '/users.json', 'utf-8'));
 
 async function deleteData() {
@@ -27,7 +27,7 @@ async function deleteData() {
 async function loadData() {
   try {
     await Store.insertMany(stores);
-    await Review.insertMany(reviews);
+    //await Review.insertMany(reviews);
     await User.insertMany(users);
     console.log('👍👍👍👍👍👍👍👍 Done!');
     process.exit();
